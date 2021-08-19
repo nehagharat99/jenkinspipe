@@ -7,7 +7,9 @@ pipeline {
     }
 	stages{
 		stage('Test'){
-			input 'Do u want to proceed?'
+			steps{
+				input 'Do u want to proceed?'
+			}
 		}
 	}
 	
