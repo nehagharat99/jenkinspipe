@@ -13,6 +13,21 @@ pipeline {
 			    input 'Do u want to proceed?'
 			}
 		}
+	    stage('Prebuild'){
+		    parallel{
+			    stage('Unittest'){
+				    steps{
+					    echo 'I am unit testing phase....'
+				    }
+			    }
+			    stage('Integrationtest'){
+				    steps{
+					    echo 'I am integration testing phase....'
+				    }
+			    }
+			    
+			}
+		}
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
