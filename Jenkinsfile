@@ -7,6 +7,13 @@ pipeline {
 	
 	
     }
+	stages{
+	    stage('Test'){
+		    steps{
+			    input 'Do u want to proceed?'
+			}
+		}
+	}
 
     stages {
         stage('Build') {
